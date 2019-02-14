@@ -23,7 +23,8 @@ import java.util.Scanner;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+
+import model.vo.User;
 
 
 class Map extends JPanel implements Runnable, KeyListener {
@@ -86,10 +87,10 @@ class Map extends JPanel implements Runnable, KeyListener {
 	private int moveStatus; //케릭터가 어디를 바라보는지 방향을 받을 변수
 	private int num = 99;
 	private boolean onOff;
-
+private User user;
 	int escCtn=0;//SM_추가
 
-	public Map(MainFrame mf) {
+	public Map(MainFrame mf, User user) {
 
 		System.out.println("맵 클래스 실행...");
 
@@ -99,7 +100,7 @@ class Map extends JPanel implements Runnable, KeyListener {
 		/*      this.stp = new StartPage(mf);*/
 		this.bp = new BattlePage(mf, m);   //BattlePage 추가
 
-		this.marketView=new MarketView(mf,m);//SM_추가
+		this.marketView=new MarketView(mf,m,user);//SM_추가
 
 		onOff = true;
 

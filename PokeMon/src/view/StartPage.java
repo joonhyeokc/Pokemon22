@@ -39,10 +39,8 @@ public class StartPage extends JPanel{
 	         @Override
 	         public void mousePressed(MouseEvent e) {
 	            
-	            String result = JOptionPane.showInputDialog("모험을 시작할 이름을 정해주세요!");
-	            UserDao ud = new UserDao(result);
-	            ud.saveUser();
-	            ud.loadUser();
+	           
+	           
 	            /*mf.remove(stp);
 	            m.setVisible(true);
 	            mf.requestFocus();
@@ -52,9 +50,13 @@ public class StartPage extends JPanel{
 	      });
 	         nextPage.addMouseListener(new MouseAdapter() {
 	        	 public void mousePressed(MouseEvent e) {
+	        		 UserDao ud = new UserDao();
+	 	            ud.getUserList().get(0).setuGold(500);
+	 	           
+	 	            ud.saveUser();
 	        		 stp.setVisible(false);
 	        		 mf.remove(stp);
-	        		 mf.add(new Map(mf));
+	        		 mf.add(new Map(mf,ud.getUserList().get(0)));
 	        		 mf.requestFocus();
 	        		
 	        		

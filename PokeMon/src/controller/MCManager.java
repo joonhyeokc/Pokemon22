@@ -12,10 +12,10 @@ public class MCManager {
    //마켓
    //구매수량체크->소유금액체크->구매가능여부 체크
    private String resultNo;
-   private UserDao ud = new UserDao();
-   private User user = ud.getUserList().get(0);
+   private User user;
    private ItemDao id = new ItemDao(); 
-   public void useMarket(String iName, int iAmount) {
+   
+   public void useMarket(String iName, int iAmount, User user) {
       this.user = user;
       //->MarketView에서 쓸 것
       //최소수량, 최대수량
@@ -36,16 +36,16 @@ public class MCManager {
                resultNo="최대 구매 수량은 100개 입니다.";
             }else if(iAmount < 1){
                resultNo="최소 구매 수량은 1개 입니다.";
-            }else if(ud.getUserList().get(0).getuGold() < check){
+            }else if(user.getuGold() < check){
                resultNo="골드가 부족합니다.";
             }else {
                
-               ud.getUserList().get(0).setuGold(/*ud.getUserList().get(0)*/user.getuGold() - check);
-               ud.saveUser();
+            	//user.setuGold(/*ud.getUserList().get(0)*/user.getuGold() - check);
+               
                //구매 가능
                //중복 아이템이 있으면 수량을 증가시켜야
                //System.out.println("아이템 : "+itemName+", 수량 : "+itemAmount);
-               im.decreaseGold(check);
+               im.decreaseGold(check,user);
             }
             //소지금액>check : 구매 가능 : itemManager 로 구매 목록과 구매총액을 보내줌
          }
