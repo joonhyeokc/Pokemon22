@@ -20,7 +20,8 @@ public class PokemonDao implements Serializable{
    private List<Pokemon> pList = new ArrayList<Pokemon>();
 
    public PokemonDao() {
-      /*pList.add(new Pokemon("자바몬",100,0,0,0, 0, new Item(), false,0, 0, 0, 0,new ArrayList<Skill>()));
+	   
+      pList.add(new Pokemon("자바몬",100,0,0,0, 0, new Item(), false,0, 0, 0, 0,new ArrayList<Skill>()));
       pList.add(new Pokemon("이상해씨",1,0,3,0, 0, new Item(), false,0, 0, 0, 0, new ArrayList<Skill>()));
       pList.add(new Pokemon("이상해풀",2,0,3,0, 0, new Item(), false,0, 0, 0, 0,new ArrayList<Skill>()));
       pList.add(new Pokemon("이상해꽃",3,0,3,0, 0, new Item(), false,0, 0, 0, 0,new ArrayList<Skill>()));
@@ -36,7 +37,7 @@ public class PokemonDao implements Serializable{
       pList.add(new Pokemon("레트라",20,0,0,0, 0, new Item(), false,0, 0, 0, 0,new ArrayList<Skill>()));
       pList.add(new Pokemon("깨비참",21,0,0,0, 0, new Item(), false,0, 0, 0, 0,new ArrayList<Skill>()));
       pList.add(new Pokemon("깨비드릴조",22,0,0,0, 0, new Item(), false,0, 0, 0, 0,new ArrayList<Skill>()));
-      pList.add(new Pokemon("피카츄",23,0,0,0, 0, new Item(), false,0, 0, 0, 0,new ArrayList<Skill>()));*/
+      pList.add(new Pokemon("피카츄",23,0,0,0, 0, new Item(), false,0, 0, 0, 0,new ArrayList<Skill>()));
       
       
       

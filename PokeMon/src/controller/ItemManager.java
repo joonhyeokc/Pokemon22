@@ -17,9 +17,9 @@ public class ItemManager {
       //dG = um.getUserGold() - check; 
       //um.setUserGold(dG);
       
-      ud.getUList().get(0).setuGold(ud.getUList().get(0).getuGold() - check);
+      ud.getUserList().get(0).setuGold(ud.getUserList().get(0).getuGold() - check);
       
-      System.out.println("현재 금액 : " + ud.getUList().get(0).getuGold());
+      System.out.println("현재 금액 : " + ud.getUserList().get(0).getuGold());
    }
    
    public void addInven(int iNo, int iAmount) {
