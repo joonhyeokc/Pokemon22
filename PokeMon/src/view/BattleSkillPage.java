@@ -18,7 +18,7 @@ public class BattleSkillPage extends JPanel implements KeyListener {
 	private Map m;
 	private JPanel bsp;
 	private BattlePage bp;
-	private NpcBattlePage nbp;
+	//private NpcBattlePage nbp;
 	
 	//버튼 이미지
 	private Image skill1ButtonImage = new ImageIcon("images/스킬버튼.png").getImage();

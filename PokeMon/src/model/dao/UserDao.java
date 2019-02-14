@@ -14,8 +14,11 @@ import model.vo.User;
 public class UserDao{
    private List<User> userList = new ArrayList<>();
 
-   public UserDao() {
-      User user = new User("´Ð³×ÀÓ");
+   public UserDao() {  
+	   loadUser();
+   }
+   public UserDao(String name) {
+      User user = new User(name);
       userList.add(user);
    }
    public void saveUser() {
@@ -39,6 +42,7 @@ public class UserDao{
       }
    }
    public List<User> getUserList() {
+	  System.out.println(userList);
       return userList;
    }
    public void setUserList(ArrayList<User> userList) {
