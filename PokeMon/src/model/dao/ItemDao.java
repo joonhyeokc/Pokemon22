@@ -20,7 +20,7 @@ public class ItemDao {
    
    public ItemDao() {
       
-      iList.add(new Ball("마스터 볼", 0, 50, 0, 0, 70, 0));
+      /*iList.add(new Ball("마스터 볼", 0, 50, 0, 0, 70, 0));
       iList.add(new Ball("슈퍼 볼", 1, 30, 0, 0, 50, 1));
       iList.add(new Ball("몬스터 볼", 2, 10, 0, 0, 20, 2));
       iList.add(new Recovery("고급 상처약", 3, 30, 1, 0, 0, 100));
@@ -28,7 +28,7 @@ public class ItemDao {
       iList.add(new Recovery("초급 상처약", 5, 10, 1, 0, 2, 30));
       iList.add(new Stone("화염의 돌", 6, 200, 2, 0));
       iList.add(new Stone("바다의 돌", 7, 200, 2, 0));
-      iList.add(new Stone("나무의 돌", 8, 200, 2, 0));
+      iList.add(new Stone("나무의 돌", 8, 200, 2, 0));*/
    }
    
    public void inputItem() {

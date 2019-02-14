@@ -719,8 +719,8 @@ class Map extends JPanel implements Runnable, KeyListener {
 		//체육관 배틀 첫번째---------------------------------------------
 		int ctn2 = 0;
 		if(num == 4 && (ctn2 == ctn - 1)&& (x > 24 && x < 75) && (y > 200 && y < 240)){
-			x = 50;
-			y = 245;
+			//x = 50;
+			//y = 245;
 			ctn += 1 ;
 
 			System.out.println("Npc배틀페이지");
@@ -732,8 +732,8 @@ class Map extends JPanel implements Runnable, KeyListener {
 
 		//체육관 배틀 두번째
 		if(num == 4 &&(ctn == 0)&& (x > 20 && x < 76) && (y > 580 && y < 615)){
-			x = 80;
-			y = 615;
+			//x = 80;
+			//y = 615;
 			ctn += 1;
 
 			System.out.println("Npc배틀페이지");

@@ -20,7 +20,7 @@ public class SkillDao implements Serializable{
    public SkillDao() {
       //처음 데이터 입력용
       
-      sList.add(new Skill("모야모야",100,0,0));
+      /*sList.add(new Skill("모야모야",100,0,0));
       sList.add(new Skill("몸통박치기",1,0,15));
       sList.add(new Skill("전광석화",2,0,18));
       sList.add(new Skill("연속뺨치기",3,0,13));
@@ -37,7 +37,7 @@ public class SkillDao implements Serializable{
       sList.add(new Skill("씨뿌리기",14,3,12));
       sList.add(new Skill("덩쿨채찍",15,3,14));
       sList.add(new Skill("잎날가르기",16,3,16));
-      sList.add(new Skill("솔라빔",17,3,18));
+      sList.add(new Skill("솔라빔",17,3,18));*/
       
    }
    
