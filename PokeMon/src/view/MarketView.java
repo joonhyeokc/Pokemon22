@@ -51,10 +51,10 @@ public class MarketView extends JPanel {
    private UserDao ud = new UserDao();
    
    public MarketView(MainFrame mf, JPanel oldPage) {
+	  
       this.mf=mf;
       this.marketView=this;
       this.m=(Map)oldPage;
-      
       this.setLayout(null);
       this.setBounds(0, 0, 1024, 768);
       

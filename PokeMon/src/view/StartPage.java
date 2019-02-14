@@ -40,8 +40,9 @@ public class StartPage extends JPanel{
 	         public void mousePressed(MouseEvent e) {
 	            
 	            String result = JOptionPane.showInputDialog("모험을 시작할 이름을 정해주세요!");
-	            new User(result);
-	            UserDao ud = new UserDao();
+	            UserDao ud = new UserDao(result);
+	            ud.saveUser();
+	            ud.loadUser();
 	            /*mf.remove(stp);
 	            m.setVisible(true);
 	            mf.requestFocus();

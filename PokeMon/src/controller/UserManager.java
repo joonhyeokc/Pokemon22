@@ -6,7 +6,7 @@ import java.util.Date;
 import model.vo.User;
 
 public class UserManager {
-	
+	/*
 	public UserManager() {
 		
 	}
@@ -48,5 +48,5 @@ public class UserManager {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd E요일 hh시 mm분");
 		String time = sdf.format(User.getuDate());
 		return time;
-	}
+	}*/
 }
