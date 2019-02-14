@@ -14,11 +14,10 @@ import model.vo.User;
 public class UserDao{
    private List<User> userList = new ArrayList<>();
 
-   public UserDao() {  
-	   loadUser();
-   }
-   public UserDao(String name) {
-      User user = new User(name);
+   
+   
+   public UserDao() {
+      User user = new User();
       userList.add(user);
    }
    public void saveUser() {

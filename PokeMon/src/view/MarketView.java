@@ -48,10 +48,9 @@ public class MarketView extends JPanel {
    
  //--------------------------수정
    private ItemDao id = new ItemDao();
-   private UserDao ud = new UserDao();
-   
-   public MarketView(MainFrame mf, JPanel oldPage) {
-	  
+   private User user;
+   public MarketView(MainFrame mf, JPanel oldPage, User user) {
+	  this.user = user;
       this.mf=mf;
       this.marketView=this;
       this.m=(Map)oldPage;
@@ -105,7 +104,7 @@ public class MarketView extends JPanel {
       presentGold.setFont(new Font(getName(),3,12));
       
       JTextField userGold = new JTextField(40);
-      userGold.setText(ud.getUserList().get(0).getuGold() + "G");
+      userGold.setText(user.getuGold() + "G");
       userGold.setLocation(600, 350);
       userGold.setSize(80,50);
       userGold.setEditable(false);
@@ -163,14 +162,14 @@ public class MarketView extends JPanel {
             //MCManager에서 비교
             iAmount = Integer.parseInt(selectedAmount.getText());
             
-            mc.useMarket(iName, iAmount);
+            mc.useMarket(iName, iAmount,user);
             
-            mc.useMarket(selectedItem.getText(), iAmount);
-            userGold.setText(ud.getUserList().get(0).getuGold()+"G");
+            mc.useMarket(selectedItem.getText(), iAmount,user);
+            userGold.setText(user.getuGold()+"G");
             
             if(mc.getResultNo()!=null) {
                 resultAmount.setText(mc.getResultNo());
-                userGold.setText(ud.getUserList().get(0).getuGold()+"G");
+                userGold.setText(user.getuGold()+"G");
             }
                 
             /*if(value>100) {

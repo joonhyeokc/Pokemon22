@@ -12,6 +12,9 @@ public class User implements java.io.Serializable{
    private List<Pokemon> up_list;
    private List<Item> ui_list;
    private List<Pokemon> tp_list;
+ 
+   public User() {}
+   
    public User(String uName) {
       super();
       this.uName = uName;

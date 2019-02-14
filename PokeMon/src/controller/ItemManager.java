@@ -7,9 +7,10 @@ import model.vo.User;
 public class ItemManager {
    
    private ItemDao id = new ItemDao();
-   private UserDao ud = new UserDao();
-   
-   public void decreaseGold(int check) {
+
+   private User user;
+   public void decreaseGold(int check, User user) {
+	   this.user = user;
       System.out.println("ItemMamager로 옴");
       //구매 총액, 현재 유저 소지 금액을 가져와서 돈 깍아주는
       System.out.println("구매총액 : " + check);
@@ -17,9 +18,9 @@ public class ItemManager {
       //dG = um.getUserGold() - check; 
       //um.setUserGold(dG);
       
-      ud.getUserList().get(0).setuGold(ud.getUserList().get(0).getuGold() - check);
+      user.setuGold(user.getuGold() - check);
       
-      System.out.println("현재 금액 : " + ud.getUserList().get(0).getuGold());
+      System.out.println("현재 금액 : " + user.getuGold());
    }
    
    public void addInven(int iNo, int iAmount) {
