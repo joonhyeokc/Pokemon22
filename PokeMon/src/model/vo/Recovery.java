@@ -9,9 +9,9 @@ public class Recovery extends Item {
    
    public Recovery() {}
    
-   public Recovery(String iName, int iNo, int iPrice, int iType, Image iImg,int iAmount, 
+   public Recovery(String iName, int iNo, int iPrice, int iType, int iAmount, 
          int rType, int rAmount) {
-      super(iName, iNo, iPrice, iType, iImg, iAmount);
+      super(iName, iNo, iPrice, iType, iAmount);
       this.rType = rType;
       this.rAmount = rAmount;
    }

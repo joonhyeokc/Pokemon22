@@ -20,7 +20,7 @@ public class SkillDao implements Serializable{
    public SkillDao() {
       //Ã³À½ µ¥ÀÌÅÍ ÀÔ·Â¿ë
       
-      /*sList.add(new Skill("¸ð¾ß¸ð¾ß",100,0,0));
+      sList.add(new Skill("¸ð¾ß¸ð¾ß",100,0,0));
       sList.add(new Skill("¸öÅë¹ÚÄ¡±â",1,0,15));
       sList.add(new Skill("Àü±¤¼®È­",2,0,18));
       sList.add(new Skill("¿¬¼Ó»´Ä¡±â",3,0,13));
@@ -37,13 +37,13 @@ public class SkillDao implements Serializable{
       sList.add(new Skill("¾¾»Ñ¸®±â",14,3,12));
       sList.add(new Skill("µ¢ÄðÃ¤Âï",15,3,14));
       sList.add(new Skill("ÀÙ³¯°¡¸£±â",16,3,16));
-      sList.add(new Skill("¼Ö¶óºö",17,3,18));*/
+      sList.add(new Skill("¼Ö¶óºö",17,3,18));
       
    }
    
    public void inputSkill() {
       try {
-         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Skill.txt",true));
+         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Skill.dat",true));
          
          oos.writeObject(sList);
       }catch(IOException e) {
@@ -53,7 +53,7 @@ public class SkillDao implements Serializable{
    
    public void outputSkill() {
       try {
-         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Skill.txt"));
+         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Skill.dat"));
          
          sList = (List<Skill>) ois.readObject();
          System.out.println(sList.size());

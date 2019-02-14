@@ -10,9 +10,9 @@ public class Ball extends Item {
    
    public Ball() {}
    
-   public Ball(String iName, int iNo, int iPrice, int iType, Image iImg, int iAmount, 
+   public Ball(String iName, int iNo, int iPrice, int iType, int iAmount, 
          int cProb, int cType) {
-      super(iName, iNo, iPrice, iType, iImg, iAmount);
+      super(iName, iNo, iPrice, iType, iAmount);
       this.cProb = cProb;
       this.cType = cType;
    }
