@@ -1,22 +1,17 @@
 package view;
 
-import java.awt.Cursor;
 import java.awt.Dialog;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Panel;
 import java.awt.Toolkit;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+import model.vo.User;
 
 
 public class BattlePage extends JPanel {
@@ -26,6 +21,7 @@ public class BattlePage extends JPanel {
    private BattleSkillPage bsp;
    private PInfoPage pip;
    private JPanel uivp;
+   private User user;
 
    //버튼 이미지 올리기
    private Image fightButtonImage = new ImageIcon("images/싸운다버튼.png").getImage();
@@ -56,12 +52,13 @@ public class BattlePage extends JPanel {
    Image enpokemon =  Toolkit.getDefaultToolkit().getImage("images/kkobugi.PNG");
 
 
-   public BattlePage(MainFrame mf, JPanel panel) {
+   public BattlePage(MainFrame mf, JPanel panel, User user) {
       this.bp = this;
       this.mf = mf;
       this.m = (Map)panel;
-      this.pip = new PInfoPage(mf,this);
+      this.pip = new PInfoPage(mf,this,user);
       this.bsp = new BattleSkillPage(mf, this);
+      this.user = user;
 
       //버튼을 맘대로 배치하기 위해
       bp.setLayout(null);

@@ -5,20 +5,21 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import model.vo.User;
 
 public class UserDao{
-   private List<User> userList = new ArrayList<>();
+   private List<User> userList = new ArrayList<User>();
 
    
    
    public UserDao() {
-      User user = new User();
+      User user = new User("str",new Date(),500,new ArrayList(),new ArrayList(),new ArrayList());
       userList.add(user);
+      
    }
    public void saveUser() {
       try(ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream("user.dat",true))){

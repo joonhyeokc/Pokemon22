@@ -9,21 +9,43 @@ public class User implements java.io.Serializable{
    private String uName;
    private Date uDate;
    private int uGold;
-   private List<Pokemon> up_list;
-   private List<Item> ui_list;
-   private List<Pokemon> tp_list;
+   private ArrayList<Pokemon> up_list;
+   private ArrayList<Item> ui_list;
+   private ArrayList<Pokemon> tp_list;
  
    public User() {}
    
-   public User(String uName) {
+   public User(String uName, Date uDate, int uGold, ArrayList<Pokemon> up_list, ArrayList<Item> ui_list, ArrayList<Pokemon> tp_list) {
+	super();
+	this.uName = uName;
+	this.uDate = uDate;
+	this.uGold = uGold;
+	this.up_list = up_list;
+	this.ui_list = ui_list;
+	this.tp_list = tp_list;
+}
+
+public void setUp_list(ArrayList<Pokemon> up_list) {
+	this.up_list = up_list;
+}
+
+public void setUi_list(ArrayList<Item> ui_list) {
+	this.ui_list = ui_list;
+}
+
+public void setTp_list(ArrayList<Pokemon> tp_list) {
+	this.tp_list = tp_list;
+}
+
+/*public User(String uName) {
       super();
       this.uName = uName;
       this.uDate = new Date();
       this.uGold = 3000;
-      this.ui_list = new ArrayList<Item>();
-      this.up_list = new ArrayList<Pokemon>(4);
-      this.tp_list = new ArrayList<Pokemon>();
-   }
+      this.ui_list = new ArrayList<Item>(0);
+      this.up_list = new ArrayList<Pokemon>(0);
+      this.tp_list = new ArrayList<Pokemon>(0);
+   }*/
    public String getuName() {
       return uName;
    }
@@ -45,21 +67,15 @@ public class User implements java.io.Serializable{
    public List<Pokemon> getUp_list() {
       return up_list;
    }
-   public void setUp_list(List<Pokemon> up_list) {
-      this.up_list = up_list;
-   }
+  
    public List<Item> getUi_list() {
       return ui_list;
    }
-   public void setUi_list(List<Item> ui_list) {
-      this.ui_list = ui_list;
-   }
+  
    public List<Pokemon> getTp_list() {
       return tp_list;
    }
-   public void setTp_list(List<Pokemon> tp_list) {
-      this.tp_list = tp_list;
-   }
+  
 
    @Override
    public int hashCode() {

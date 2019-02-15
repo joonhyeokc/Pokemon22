@@ -15,12 +15,12 @@ import view.PInfoPage;
 public class BattleManager {
 
 
-   private PokemonDao pd = new PokemonDao();
    private PInfoPage pip;
    private SkillDao sd = new SkillDao();
    private Pokemon poke;     //랜덤 포켓몬
    private Pokemon mypoke;   //내 포켓몬
    private int num;
+  
    
    public Pokemon getPoke() {
       return poke;
@@ -33,29 +33,41 @@ public class BattleManager {
    
 
    //현재 포켓몬 보여주는 부분
-   public void showP(PInfoPage pip) {
+   public void showP(PInfoPage pip, User user) {
 
-      
-
+	   user.getUp_list().add(new Pokemon());
+	   user.getUp_list().add(new Pokemon());
+	   user.getUp_list().add(new Pokemon());
+	   user.getUp_list().add(new Pokemon()); 
       this.pip = pip;
+      
+      
 
       JTextArea[] jta = new JTextArea[4];
       JLabel[] jl = new JLabel[4];
 
-      for(int i=0; i<4; i++) {
+      for(int i=0; i<user.getUp_list().size(); i++) {
          
-         
-         jl[i] = new JLabel();
-         jl[i].setIcon(new ImageIcon("images/userMenuImages/pBook/"+num+".png"));
+    	  if(user.getUp_list().get(i) ==null) {
+    		  
+    	  }else {
+    		  
+    		  jl[i] = new JLabel();
+    	         num = user.getUp_list().get(i).getpNo();
+    	         jl[i].setIcon(new ImageIcon("images/userMenuImages/pBook/"+num+".png"));
 
 
-         jta[i] = new JTextArea();
-         jta[i].setText("\t포켓몬 이름 : "+ User.getUp_list().get(i).getpName() + "\n"
-               +"\t레    벨 : " + User.getUp_list().get(i).getpLevel() + "\n"
-               +"\t공 격 력 : " + User.getUp_list().get(i).getGrade() + "\n"
-               +"\t스 피 드 : " + User.getUp_list().get(i).getpSpeed() + "\n"
-               +"\t체    력  : " +User.getUp_list().get(i).getpHp() + "\n");
-         jta[i].setEditable(false);
+    	         jta[i] = new JTextArea();
+    	         jta[i].setText("\t포켓몬 이름 : "+ user.getUp_list().get(i).getpName() + "\n"
+    	               +"\t레    벨 : " + user.getUp_list().get(i).getpLevel() + "\n"
+    	               +"\t등    급 : " + user.getUp_list().get(i).getGrade() + "\n"
+    	               +"\t스 피 드 : " + user.getUp_list().get(i).getpSpeed() + "\n"
+    	               +"\t체    력  : " +user.getUp_list().get(i).getpHp() + "\n");
+    	         jta[i].setEditable(false);
+    	  }
+    	
+         
+        
 
       }
 

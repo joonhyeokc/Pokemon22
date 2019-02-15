@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import controller.BattleManager;
+import model.vo.User;
 
 
 public class UserMenuPage extends JPanel {
@@ -35,13 +35,13 @@ public class UserMenuPage extends JPanel {
 	
 
 
-	public UserMenuPage(MainFrame mf, JPanel panel) {
+	public UserMenuPage(MainFrame mf, JPanel panel, User user) {
 		
 		this.ump = this;
 		this.mf = mf;
 		this.m = (Map) panel;
 		this.uip = new UserInfoPage(mf, this);
-		this.pip = new PInfoPage(mf, this);
+		this.pip = new PInfoPage(mf, this,user);
 		this.sp = new SavePage(mf, this);
 		this.uivp = new UserInvenPage(mf,this);
 		this.pb = new PBookPage(mf,this);

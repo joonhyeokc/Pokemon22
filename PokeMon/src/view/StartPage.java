@@ -10,12 +10,14 @@ import javax.swing.JPanel;
 
 import controller.UserManager;
 import model.dao.UserDao;
+import model.vo.Pokemon;
 import model.vo.User;
 
 public class StartPage extends JPanel{
 
 	private MainFrame mf;
 	private JPanel stp;
+	private User user;
 	
 	public StartPage(MainFrame mf) {
 		this.mf = mf;
@@ -51,12 +53,11 @@ public class StartPage extends JPanel{
 	         nextPage.addMouseListener(new MouseAdapter() {
 	        	 public void mousePressed(MouseEvent e) {
 	        		 UserDao ud = new UserDao();
-	 	            ud.getUserList().get(0).setuGold(500);
-	 	           
-	 	            ud.saveUser();
+	        		 ud.getUserList().get(0).setuGold(500);
+	        		 ud.saveUser();
 	        		 stp.setVisible(false);
 	        		 mf.remove(stp);
-	        		 mf.add(new Map(mf,ud.getUserList().get(0)));
+	        		 mf.add(new Map(mf, ud.getUserList().get(0)));
 	        		 mf.requestFocus();
 	        		
 	        		

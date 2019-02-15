@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import controller.BattleManager;
+import model.vo.User;
 
 public class PInfoPage extends JPanel{
    private MainFrame mf;
@@ -21,17 +22,19 @@ public class PInfoPage extends JPanel{
    private JPanel pip;
    private UserMenuPage ump;
    private BattlePage bp;
+   private User user;
    //private NpcBattlePage nbp;
 
    private JLabel[] pInfo = new JLabel[4];
    private JTextArea[] pInfoText = new JTextArea[4];
    private JButton backButton = new JButton(new ImageIcon("images/userMenuImages/backButtonBasic.png"));
 
-   public PInfoPage(MainFrame mf, UserMenuPage ump) {
+   public PInfoPage(MainFrame mf, UserMenuPage ump, User user) {
       
       this.mf = mf;
       this.pip = this;
       this.ump = ump;
+      this.user = user;
       pip.setOpaque(false);
       pip.setBounds(0, 0, 1024, 768);
 /*      pm.setPokemon(new Pokemon(1,"이상해씨",50,3));
@@ -67,7 +70,7 @@ public class PInfoPage extends JPanel{
                         +"\t체    력  : " + pHp + "\n"
                         );
       }*/
-      //BattleManager.showP(this);        //활성화
+      new BattleManager().showP(this,user);
       
       mf.addKeyListener(new KeyAdapter() {
          public void keyPressed(KeyEvent e) {
@@ -107,6 +110,8 @@ public class PInfoPage extends JPanel{
 
          }
       });
+      
+       
 
       label.setBounds(450, 20, 200, 40);
       pInfo[0].setBounds(180, 30, 300, 160);
@@ -130,17 +135,20 @@ public class PInfoPage extends JPanel{
       pip.add(pInfoText[1]);
       pip.add(pInfoText[2]);
       pip.add(pInfoText[3]);
+      
+     
    }
    
    
    
    
    //BattlePage에서 연결
-      public PInfoPage(MainFrame mf, BattlePage bp) {
+      public PInfoPage(MainFrame mf, BattlePage bp, User user) {
 
          this.mf = mf;
          this.pip = this;
          this.bp = bp;
+         this.
          pip.setOpaque(false);
          pip.setBounds(0, 0, 1024, 768);
    /*      pm.setPokemon(new Pokemon(1,"이상해씨",50,3));
@@ -176,8 +184,9 @@ public class PInfoPage extends JPanel{
                            +"\t체    력  : " + pHp + "\n"
                            );
          }
-         BattleManager.showP(this);*/
-         
+         */
+        
+        
          mf.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                if(e.getKeyCode() == UserMenuPage.ESC) {
@@ -239,6 +248,8 @@ public class PInfoPage extends JPanel{
          pip.add(pInfoText[1]);
          pip.add(pInfoText[2]);
          pip.add(pInfoText[3]);
+         
+         
       }
       
       

@@ -91,14 +91,14 @@ private User user;
 	int escCtn=0;//SM_추가
 
 	public Map(MainFrame mf, User user) {
-
+this.user = user;
 		System.out.println("맵 클래스 실행...");
 
 		this.mf = mf;
 		this.m = this;
-		this.ump = new UserMenuPage(mf, m);
+		this.ump = new UserMenuPage(mf, m, user);
 		/*      this.stp = new StartPage(mf);*/
-		this.bp = new BattlePage(mf, m);   //BattlePage 추가
+		this.bp = new BattlePage(mf, m, user);   //BattlePage 추가
 
 		this.marketView=new MarketView(mf,m,user);//SM_추가
 
@@ -299,7 +299,7 @@ private User user;
 	}
 
 	public void keyPressed(KeyEvent e) {
-		this.bp = new BattlePage(mf, m);
+		this.bp = new BattlePage(mf, m,user);
 
 		if(escCtn==0&&e.getKeyCode() == 27) { //SM_추가//기존꺼는 Market에서 오류 발생
 			System.out.println("esc 누름 = 유저메뉴");
