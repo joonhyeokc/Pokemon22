@@ -215,7 +215,7 @@ public class MarketView extends JPanel {
             
             m.setVisible(true);
             mf.requestFocus();
-            ((Map)m).start();
+            //((Map)m).start();
             m.setEscCtn(0);
          }
       });
