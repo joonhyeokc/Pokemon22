@@ -51,6 +51,7 @@ public class MCManager {
          }
       }
       
+      
    }
    public String getResultNo() {
       return resultNo;
