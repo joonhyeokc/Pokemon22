@@ -46,6 +46,8 @@ public class MCManager {
                //중복 아이템이 있으면 수량을 증가시켜야
                //System.out.println("아이템 : "+itemName+", 수량 : "+itemAmount);
                im.decreaseGold(check,user);
+               im.addInven(i, iAmount);
+               
             }
             //소지금액>check : 구매 가능 : itemManager 로 구매 목록과 구매총액을 보내줌
          }
@@ -61,7 +63,10 @@ public class MCManager {
    }
    public void useCenter() {
       //회복 시켜주기
+	   System.out.println("센터 들어옴");
 	   System.out.println(user);
+	   //user.getUp_list().get(0).getpHp();
+	   //System.out.println(user.getUp_list().get(0).getpHp());
       
    }
 
