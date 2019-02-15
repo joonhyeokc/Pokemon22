@@ -28,6 +28,13 @@ public class ItemManager {
       System.out.println("유저 인벤토리 추가 실행");
       System.out.println("선택한 아이템 번호 : " + iNo + " / 수량 : " + iAmount);
       
+      //id.getIList().get(iNo).setiAmount(iAmount);
+      //System.out.println("구매 수량 : "+id.getIList().get(iNo).getiAmount());
+      //user.setUi_list(id.getIList());
+      //System.out.println(user.getUi_list().get(0).getiName());
+      //System.out.println(user.getUi_list().get(1).getiName());
+      
+      
       /*id.getItemList().get(iNo).setiAmount(iAmount);
       User.getUi_list().add(id.getItemList().get(iNo));
       
@@ -43,7 +50,7 @@ public class ItemManager {
    }
    
    
-   //배틀에서 받아와야 됨
+   //배틀에서 메소드 호출 시 유저 인벤토리에 있는 수량 깍임
    public void useStone() {
       
    }
