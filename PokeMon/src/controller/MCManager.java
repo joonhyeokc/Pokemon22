@@ -51,6 +51,7 @@ public class MCManager {
          }
       }
       
+      
    }
    public String getResultNo() {
       return resultNo;
@@ -60,6 +61,7 @@ public class MCManager {
    }
    public void useCenter() {
       //회복 시켜주기
+	   System.out.println(user);
       
    }
 
